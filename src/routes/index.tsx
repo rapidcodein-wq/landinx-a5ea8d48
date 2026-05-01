@@ -6,6 +6,7 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Marquee } from "@/components/site/Marquee";
 import { Reveal, RevealStagger, RevealItem } from "@/components/site/Reveal";
+import { projects as allProjects } from "@/lib/projects";
 import heroPortrait from "@/assets/hero-portrait.jpg";
 import { HeroStripe } from "@/components/site/HeroStripe";
 import abstractLime from "@/assets/abstract-lime.jpg";
