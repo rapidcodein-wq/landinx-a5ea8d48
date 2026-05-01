@@ -152,12 +152,26 @@ function About() {
 
         <div className="lg:col-span-7">
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-3xl border border-border bg-card p-6">
-              <div className="text-xs uppercase tracking-widest text-foreground/50">Revenue</div>
-              <div className="mt-2 font-display text-4xl">$0 → $500K</div>
-              <p className="mt-2 text-sm text-foreground/60">In just six months across our partner roster.</p>
-              <div className="mt-6 h-24 rounded-2xl bg-gradient-to-br from-accent/40 to-accent/0" />
-            </div>
+             <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true, amount: 0.5 }}
+               transition={{ duration: 0.5, ease: "easeOut" }}
+               className="rounded-3xl border border-border bg-card p-6"
+             >
+               <div className="text-xs uppercase tracking-widest text-foreground/50">Revenue</div>
+               <div className="mt-2 font-display text-4xl">$0 → $500K</div>
+               <p className="mt-2 text-sm text-foreground/60">In just six months across our partner roster.</p>
+               <div className="mt-6 h-24 overflow-hidden rounded-2xl bg-secondary">
+                 <motion.div
+                   className="h-full rounded-2xl bg-gradient-to-r from-accent to-accent/30"
+                   initial={{ width: 0 }}
+                   whileInView={{ width: "100%" }}
+                   viewport={{ once: true, amount: 0.5 }}
+                   transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+                 />
+               </div>
+             </motion.div>
              <motion.div
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
