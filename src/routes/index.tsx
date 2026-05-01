@@ -1,8 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
+import { Footer } from "@/components/site/Footer";
 import { Marquee } from "@/components/site/Marquee";
 import { Reveal, RevealStagger, RevealItem } from "@/components/site/Reveal";
 import heroPortrait from "@/assets/hero-portrait.jpg";
