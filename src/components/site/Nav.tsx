@@ -34,9 +34,9 @@ export function Nav() {
             : "max-w-7xl border-border/60 py-2.5"
         }`}
       >
-        <Link to="/" className="flex items-center gap-2 pl-2" aria-label="X Studio — Home">
-          <img src={logo} alt="X Studio" className="size-9 rounded-lg" />
-          <span className="font-display text-xl leading-none"><span className="text-accent">X</span> Studio</span>
+        <Link to="/" className="flex items-center gap-1 pl-2" aria-label="X Studio — Home">
+          <img src={logo} alt="X" className="size-9 rounded-lg" />
+          <span className="font-display text-xl leading-none">Studio</span>
         </Link>
         <ul className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
