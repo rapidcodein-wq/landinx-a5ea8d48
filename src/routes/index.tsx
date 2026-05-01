@@ -368,15 +368,9 @@ function Benefits() {
   );
 }
 
-const projects = [
-  { name: "Way Fields", slug: "way-fields", year: 2024, type: "E-Commerce", img: caseWatch },
-  { name: "Raven Studio", slug: "raven-studio", year: 2025, type: "Business", img: caseBlackBottle },
-  { name: "White Stag", slug: "white-stag", year: 2024, type: "SaaS", img: caseBottle },
-];
-
 function Portfolio() {
-  // Duplicate the list so the marquee can loop seamlessly.
-  const loop = [...projects, ...projects, ...projects, ...projects];
+  // Duplicate the full list once so the -50% keyframe loops seamlessly.
+  const loop = [...allProjects, ...allProjects];
   return (
     <section className="px-4 py-24">
       <div className="mx-auto max-w-7xl">
@@ -396,14 +390,14 @@ function Portfolio() {
         className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
         aria-label="Selected projects carousel"
       >
-        <div className="flex w-max gap-5 motion-safe:animate-marquee group-hover:[animation-play-state:paused]">
+        <div className="flex w-max gap-5 motion-safe:animate-marquee-slow group-hover:[animation-play-state:paused]">
           {loop.map((p, i) => (
             <Link
               key={`${p.slug}-${i}`}
               to="/portfolio/$slug"
               params={{ slug: p.slug }}
               className="group/card block w-[78vw] max-w-[360px] shrink-0 sm:w-[44vw] md:w-[34vw] lg:w-[26vw]"
-              aria-label={`${p.name} — ${p.type}, ${p.year}`}
+              aria-label={`${p.name} — ${p.category}, ${p.year}`}
             >
               <div className="overflow-hidden rounded-3xl bg-secondary">
                 <img
@@ -417,7 +411,7 @@ function Portfolio() {
                 <h3 className="font-display text-2xl">{p.name}</h3>
                 <div className="flex gap-2 text-xs text-foreground/60">
                   <span className="rounded-full border border-border px-2.5 py-1">{p.year}</span>
-                  <span className="rounded-full border border-border px-2.5 py-1">{p.type}</span>
+                  <span className="rounded-full border border-border px-2.5 py-1">{p.category}</span>
                 </div>
               </div>
             </Link>
