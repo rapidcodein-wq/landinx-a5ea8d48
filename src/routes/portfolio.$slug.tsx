@@ -13,13 +13,13 @@ export const Route = createFileRoute("/portfolio/$slug")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.project.name} — Landin Portfolio` },
+          { title: `${loaderData.project.name} — Xstudio Portfolio` },
           { name: "description", content: loaderData.project.description },
-          { property: "og:title", content: `${loaderData.project.name} — Landin Portfolio` },
+          { property: "og:title", content: `${loaderData.project.name} — Xstudio Portfolio` },
           { property: "og:description", content: loaderData.project.description },
           { property: "og:image", content: loaderData.project.img },
         ]
-      : [{ title: "Project — Landin Portfolio" }],
+      : [{ title: "Project — Xstudio Portfolio" }],
   }),
   component: ProjectPage,
   notFoundComponent: () => {

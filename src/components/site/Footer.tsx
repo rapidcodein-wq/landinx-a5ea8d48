@@ -17,7 +17,7 @@ export function Footer() {
         <div className="md:col-span-5">
           <Link to="/" className="flex items-center gap-2">
             <span className="grid size-8 place-items-center rounded-full bg-foreground text-background font-display text-base">L</span>
-            <span className="font-display text-2xl">Landin</span>
+            <span className="font-display text-2xl">Xstudio</span>
           </Link>
           <p className="mt-4 max-w-sm text-sm text-foreground/65">
             A premium agency crafting unique digital presences for ambitious brands and startups.
@@ -75,7 +75,7 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-12 flex max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-border pt-6 text-xs text-foreground/55">
-        <div>© {new Date().getFullYear()} Landin Studio</div>
+        <div>© {new Date().getFullYear()} Xstudio</div>
         <div className="flex flex-wrap gap-5">
           <Link to="/terms" className="hover:underline">Terms & Conditions</Link>
           <Link to="/privacy" className="hover:underline">Privacy Policy</Link>

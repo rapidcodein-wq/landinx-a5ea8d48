@@ -112,7 +112,7 @@ function Hero() {
         >
           <PrimaryCTA>Connect With Us</PrimaryCTA>
           <a href="#about" className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-5 py-3 text-sm font-medium hover:bg-secondary">
-            What is Landin?
+            What is Xstudio?
           </a>
         </motion.div>
       </motion.div>
@@ -128,7 +128,7 @@ function About() {
     <section id="about" className="px-4 py-24">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <SectionLabel>About Landin</SectionLabel>
+          <SectionLabel>About Xstudio</SectionLabel>
           <h2 className="mt-5 font-display text-5xl leading-[0.95] md:text-6xl">
             Building Stronger Brands{" "}
             <em className="text-foreground/60">Creating Impressions!</em>
@@ -137,7 +137,7 @@ function About() {
             Delivering high-quality, on-demand designs with precision. Elevate your brand effortlessly, one snap at a time.
           </p>
           <div className="mt-8 flex items-center gap-4">
-            <PrimaryCTA>View About Landin</PrimaryCTA>
+            <PrimaryCTA>View About Xstudio</PrimaryCTA>
             <div className="flex items-center gap-2 text-xs text-foreground/60">
               <div className="flex -space-x-2">
                 {[gallery3, gallery1, gallery2].map((g, i) => (
@@ -329,7 +329,7 @@ function Benefits() {
     <section className="px-4 py-24">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
         <div>
-          <SectionLabel>Landin Benefits</SectionLabel>
+          <SectionLabel>Xstudio Benefits</SectionLabel>
           <h2 className="mt-5 font-display text-5xl leading-[0.95] md:text-6xl">
             We Don't Just Design,{" "}
             <em className="text-foreground/60">We Build.</em>
@@ -358,7 +358,7 @@ function Benefits() {
             </p>
             <div className="mt-6 flex items-center gap-3">
               <Link to="/contact" className="rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground">Book Appointment</Link>
-              <Link to="/about" className="text-sm text-background/70 hover:text-background">What is Landin? →</Link>
+              <Link to="/about" className="text-sm text-background/70 hover:text-background">What is Xstudio? →</Link>
             </div>
           </div>
         </div>

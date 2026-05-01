@@ -5,10 +5,10 @@ import { Footer } from "@/components/site/Footer";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms & Conditions — Landin Studio" },
-      { name: "description", content: "The terms and conditions that govern your use of the Landin website and services." },
-      { property: "og:title", content: "Terms & Conditions — Landin Studio" },
-      { property: "og:description", content: "Terms and conditions for using Landin services." },
+      { title: "Terms & Conditions — Xstudio" },
+      { name: "description", content: "The terms and conditions that govern your use of the Xstudio website and services." },
+      { property: "og:title", content: "Terms & Conditions — Xstudio" },
+      { property: "og:description", content: "Terms and conditions for using Xstudio services." },
     ],
   }),
   component: TermsPage,
@@ -26,7 +26,7 @@ function TermsPage() {
           <div className="prose-landin mt-10 space-y-8 text-foreground/80">
             <section>
               <h2 className="font-display text-2xl text-foreground">1. Agreement</h2>
-              <p className="mt-3">By engaging Landin Studio (&quot;we&quot;, &quot;us&quot;) for services, you agree to these terms. If you don't agree, please don't use our services.</p>
+              <p className="mt-3">By engaging Xstudio (&quot;we&quot;, &quot;us&quot;) for services, you agree to these terms. If you don't agree, please don't use our services.</p>
             </section>
             <section>
               <h2 className="font-display text-2xl text-foreground">2. Services</h2>
@@ -58,7 +58,7 @@ function TermsPage() {
             </section>
             <section>
               <h2 className="font-display text-2xl text-foreground">9. Contact</h2>
-              <p className="mt-3">Questions about these terms? Email hello@landin.studio.</p>
+              <p className="mt-3">Questions about these terms? Email hello@xstudio.com.</p>
             </section>
           </div>
         </article>
