@@ -635,64 +635,6 @@ function CTA() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="border-t border-border px-4 py-14">
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-12">
-        <div className="md:col-span-5">
-          <div className="flex items-center gap-2">
-            <span className="grid size-8 place-items-center rounded-full bg-foreground text-background font-display text-base">L</span>
-            <span className="font-display text-2xl">Landin</span>
-          </div>
-          <p className="mt-4 max-w-sm text-sm text-foreground/65">
-            A premium agency crafting unique digital presences for ambitious brands and startups.
-          </p>
-          <form className="mt-6 flex max-w-sm overflow-hidden rounded-full border border-border bg-background p-1">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 bg-transparent px-4 text-sm outline-none"
-            />
-            <button type="button" className="rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background">Subscribe</button>
-          </form>
-        </div>
-
-        <div className="md:col-span-3">
-          <div className="text-xs uppercase tracking-widest text-foreground/50">Pages</div>
-          <ul className="mt-4 space-y-2 text-sm">
-            {["Home", "About", "Portfolio", "Contact", "FAQ"].map((l) => (
-              <li key={l}><a href="#" className="hover:underline">{l}</a></li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="md:col-span-2">
-          <div className="text-xs uppercase tracking-widest text-foreground/50">Social</div>
-          <ul className="mt-4 space-y-2 text-sm">
-            {["Twitter (X)", "Instagram", "Youtube", "Framer"].map((l) => (
-              <li key={l}><a href="#" className="hover:underline">{l}</a></li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="md:col-span-2">
-          <div className="text-xs uppercase tracking-widest text-foreground/50">Sales</div>
-          <div className="mt-4 font-display text-3xl">7,360,109</div>
-          <div className="mt-1 text-xs text-foreground/50">Total revenue generated</div>
-        </div>
-      </div>
-
-      <div className="mx-auto mt-12 flex max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-border pt-6 text-xs text-foreground/55">
-        <div>© {new Date().getFullYear()} Landin Studio</div>
-        <div className="flex gap-5">
-          <a href="#" className="hover:underline">Terms & Conditions</a>
-          <a href="#" className="hover:underline">Privacy Policy</a>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
