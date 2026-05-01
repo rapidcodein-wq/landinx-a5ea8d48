@@ -211,9 +211,10 @@ function Results() {
           </div>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <RevealStagger className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {cases.map((c) => (
-            <article key={c.name} className="group rounded-3xl border border-background/10 bg-background/[0.04] p-4 transition hover:bg-background/[0.07]">
+            <RevealItem key={c.name}>
+              <article className="lift group h-full rounded-3xl border border-background/10 bg-background/[0.04] p-4 hover:border-background/25 hover:bg-background/[0.08]">
               <div className="relative aspect-square overflow-hidden rounded-2xl bg-background/10">
                 <img src={c.img} alt={c.name} loading="lazy" className="size-full object-cover transition duration-700 group-hover:scale-105" />
                 {c.tag && (
@@ -229,9 +230,10 @@ function Results() {
                   </div>
                 ))}
               </div>
-            </article>
+              </article>
+            </RevealItem>
           ))}
-        </div>
+        </RevealStagger>
       </div>
     </section>
   );
@@ -386,11 +388,12 @@ function Portfolio() {
           <a href="#" className="text-sm font-medium underline underline-offset-4">View Portfolio →</a>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <RevealStagger className="grid gap-5 md:grid-cols-3">
           {projects.map((p) => (
-            <a key={p.name} href="#" className="group block">
+            <RevealItem key={p.name}>
+              <a href="#" className="group block">
               <div className="overflow-hidden rounded-3xl bg-secondary">
-                <img src={p.img} alt={p.name} loading="lazy" className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105" />
+                <img src={p.img} alt={p.name} loading="lazy" className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-[1.06]" />
               </div>
               <div className="mt-4 flex items-center justify-between">
                 <h3 className="font-display text-2xl">{p.name}</h3>
@@ -399,9 +402,10 @@ function Portfolio() {
                   <span className="rounded-full border border-border px-2.5 py-1">{p.type}</span>
                 </div>
               </div>
-            </a>
+              </a>
+            </RevealItem>
           ))}
-        </div>
+        </RevealStagger>
       </div>
     </section>
   );
