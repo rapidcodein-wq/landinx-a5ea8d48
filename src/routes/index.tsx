@@ -155,8 +155,8 @@ function About() {
              <motion.div
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true, amount: 0.5 }}
-               transition={{ duration: 0.5, ease: "easeOut" }}
+               viewport={{ once: true, amount: 0.4 }}
+               transition={{ duration: 0.9, ease: "easeOut" }}
                className="rounded-3xl border border-border bg-card p-6"
              >
                <div className="text-xs uppercase tracking-widest text-foreground/50">Revenue</div>
@@ -167,16 +167,16 @@ function About() {
                    className="h-full rounded-2xl bg-gradient-to-r from-accent to-accent/30"
                    initial={{ width: 0 }}
                    whileInView={{ width: "100%" }}
-                   viewport={{ once: true, amount: 0.5 }}
-                   transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+                   viewport={{ once: true, amount: 0.4 }}
+                   transition={{ duration: 3.2, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
                  />
                </div>
              </motion.div>
              <motion.div
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true, amount: 0.5 }}
-               transition={{ duration: 0.5, ease: "easeOut" }}
+               viewport={{ once: true, amount: 0.4 }}
+               transition={{ duration: 0.9, ease: "easeOut" }}
                className="rounded-3xl border border-border bg-foreground p-6 text-background"
              >
                <div className="text-xs uppercase tracking-widest text-background/60">New Customers</div>
@@ -190,8 +190,8 @@ function About() {
                      style={{ height: `${h}%` }}
                      initial={{ scaleY: 0, opacity: 0 }}
                      whileInView={{ scaleY: 1, opacity: 1 }}
-                     viewport={{ once: true, amount: 0.5 }}
-                     transition={{ duration: 0.55, delay: 0.15 + i * 0.09, ease: [0.22, 1, 0.36, 1] }}
+                     viewport={{ once: true, amount: 0.4 }}
+                     transition={{ duration: 1.1, delay: 0.4 + i * 0.32, ease: [0.22, 1, 0.36, 1] }}
                    />
                  ))}
                </div>
