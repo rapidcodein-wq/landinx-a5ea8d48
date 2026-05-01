@@ -1,8 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
+import { Footer } from "@/components/site/Footer";
 import { Marquee } from "@/components/site/Marquee";
 import { Reveal, RevealStagger, RevealItem } from "@/components/site/Reveal";
 import heroPortrait from "@/assets/hero-portrait.jpg";
@@ -31,21 +32,21 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function PrimaryCTA({ children, variant = "dark" }: { children: React.ReactNode; variant?: "dark" | "lime" }) {
+function PrimaryCTA({ children, variant = "dark", to = "/contact" }: { children: React.ReactNode; variant?: "dark" | "lime"; to?: string }) {
   const styles =
     variant === "lime"
       ? "bg-accent text-accent-foreground hover:bg-lime-deep"
       : "bg-foreground text-background hover:bg-foreground/85";
   return (
-    <a
-      href="#contact"
+    <Link
+      to={to as any}
       className={`group inline-flex items-center gap-3 rounded-full py-3 pl-6 pr-2 text-sm font-medium transition-all duration-300 ${styles}`}
     >
       {children}
       <span className="grid size-9 place-items-center overflow-hidden rounded-full bg-background/15 text-current transition-transform duration-300 group-hover:rotate-45">
         <ArrowUpRight className="size-4" strokeWidth={2} />
       </span>
-    </a>
+    </Link>
   );
 }
 
@@ -201,10 +202,10 @@ function Results() {
             <p className="text-background/70">
               At the core of everything we do lies a commitment to delivering measurable outcomes that drive your success.
             </p>
-            <a href="#contact" className="mt-6 inline-flex items-center gap-3 rounded-full bg-accent py-3 pl-6 pr-2 text-sm font-medium text-accent-foreground hover:bg-lime-deep">
+            <Link to="/contact" className="mt-6 inline-flex items-center gap-3 rounded-full bg-accent py-3 pl-6 pr-2 text-sm font-medium text-accent-foreground hover:bg-lime-deep">
               Book a 15-min call
               <span className="grid size-9 place-items-center rounded-full bg-foreground/10 text-current">↗</span>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -356,8 +357,8 @@ function Benefits() {
               Enjoy the freedom to submit unlimited requests without restrictions. Whether design tweaks or full sprints, we're here at every step.
             </p>
             <div className="mt-6 flex items-center gap-3">
-              <a href="#contact" className="rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground">Book Appointment</a>
-              <a href="#" className="text-sm text-background/70 hover:text-background">What is Landin? →</a>
+              <Link to="/contact" className="rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground">Book Appointment</Link>
+              <Link to="/about" className="text-sm text-background/70 hover:text-background">What is Landin? →</Link>
             </div>
           </div>
         </div>
@@ -367,9 +368,9 @@ function Benefits() {
 }
 
 const projects = [
-  { name: "Way Fields", year: 2024, type: "E-Commerce", img: caseWatch },
-  { name: "Raven Studio", year: 2025, type: "Business", img: caseBlackBottle },
-  { name: "White Stag", year: 2024, type: "SaaS", img: caseBottle },
+  { name: "Way Fields", slug: "way-fields", year: 2024, type: "E-Commerce", img: caseWatch },
+  { name: "Raven Studio", slug: "raven-studio", year: 2025, type: "Business", img: caseBlackBottle },
+  { name: "White Stag", slug: "white-stag", year: 2024, type: "SaaS", img: caseBottle },
 ];
 
 function Portfolio() {
@@ -384,13 +385,13 @@ function Portfolio() {
               <em className="text-foreground/60">That Propel Your Brand.</em>
             </h2>
           </div>
-          <a href="#" className="text-sm font-medium underline underline-offset-4">View Portfolio →</a>
+          <Link to="/portfolio" className="text-sm font-medium underline underline-offset-4">View Portfolio →</Link>
         </div>
 
         <RevealStagger className="grid gap-5 md:grid-cols-3">
           {projects.map((p) => (
             <RevealItem key={p.name}>
-              <a href="#" className="group block">
+              <Link to="/portfolio/$slug" params={{ slug: p.slug }} className="group block">
               <div className="overflow-hidden rounded-3xl bg-secondary">
                 <img src={p.img} alt={p.name} loading="lazy" className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-[1.06]" />
               </div>
@@ -401,7 +402,7 @@ function Portfolio() {
                   <span className="rounded-full border border-border px-2.5 py-1">{p.type}</span>
                 </div>
               </div>
-              </a>
+              </Link>
             </RevealItem>
           ))}
         </RevealStagger>
@@ -459,9 +460,9 @@ function Services() {
                   </li>
                 ))}
               </ul>
-              <a href="#contact" className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full py-3 text-sm font-medium ${s.featured ? "bg-foreground text-background" : "bg-background text-foreground"}`}>
+              <Link to="/contact" className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full py-3 text-sm font-medium ${s.featured ? "bg-foreground text-background" : "bg-background text-foreground"}`}>
                 Book an Appointment →
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -508,9 +509,9 @@ function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a href="#contact" className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-medium ${p.featured ? "bg-accent text-accent-foreground" : "bg-foreground text-background"}`}>
+              <Link to="/contact" className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-medium ${p.featured ? "bg-accent text-accent-foreground" : "bg-foreground text-background"}`}>
                 Book an Appointment →
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -621,74 +622,16 @@ function CTA() {
           Ready to take the next step? Join us now and start transforming your vision into reality with expert support.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
-          <a href="#" className="group inline-flex items-center gap-3 rounded-full bg-accent py-3 pl-6 pr-2 text-sm font-medium text-accent-foreground hover:bg-lime-deep">
+          <Link to="/contact" className="group inline-flex items-center gap-3 rounded-full bg-accent py-3 pl-6 pr-2 text-sm font-medium text-accent-foreground hover:bg-lime-deep">
             Book an Appointment
             <span className="grid size-9 place-items-center rounded-full bg-foreground/10 transition group-hover:rotate-45">↗</span>
-          </a>
+          </Link>
           <span className="text-sm text-background/60">Made remotely with 💚 — Westhill Studio</span>
         </div>
 
         <img src={manLaptop} alt="" loading="lazy" className="mt-12 h-72 w-full rounded-3xl object-cover opacity-90" />
       </div>
     </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="border-t border-border px-4 py-14">
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-12">
-        <div className="md:col-span-5">
-          <div className="flex items-center gap-2">
-            <span className="grid size-8 place-items-center rounded-full bg-foreground text-background font-display text-base">L</span>
-            <span className="font-display text-2xl">Landin</span>
-          </div>
-          <p className="mt-4 max-w-sm text-sm text-foreground/65">
-            A premium agency crafting unique digital presences for ambitious brands and startups.
-          </p>
-          <form className="mt-6 flex max-w-sm overflow-hidden rounded-full border border-border bg-background p-1">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 bg-transparent px-4 text-sm outline-none"
-            />
-            <button type="button" className="rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background">Subscribe</button>
-          </form>
-        </div>
-
-        <div className="md:col-span-3">
-          <div className="text-xs uppercase tracking-widest text-foreground/50">Pages</div>
-          <ul className="mt-4 space-y-2 text-sm">
-            {["Home", "About", "Portfolio", "Contact", "FAQ"].map((l) => (
-              <li key={l}><a href="#" className="hover:underline">{l}</a></li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="md:col-span-2">
-          <div className="text-xs uppercase tracking-widest text-foreground/50">Social</div>
-          <ul className="mt-4 space-y-2 text-sm">
-            {["Twitter (X)", "Instagram", "Youtube", "Framer"].map((l) => (
-              <li key={l}><a href="#" className="hover:underline">{l}</a></li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="md:col-span-2">
-          <div className="text-xs uppercase tracking-widest text-foreground/50">Sales</div>
-          <div className="mt-4 font-display text-3xl">7,360,109</div>
-          <div className="mt-1 text-xs text-foreground/50">Total revenue generated</div>
-        </div>
-      </div>
-
-      <div className="mx-auto mt-12 flex max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-border pt-6 text-xs text-foreground/55">
-        <div>© {new Date().getFullYear()} Landin Studio</div>
-        <div className="flex gap-5">
-          <a href="#" className="hover:underline">Terms & Conditions</a>
-          <a href="#" className="hover:underline">Privacy Policy</a>
-        </div>
-      </div>
-    </footer>
   );
 }
 
