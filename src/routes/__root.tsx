@@ -1,28 +1,47 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
 
 import appCss from "../styles.css?url";
 import { SmoothScroll } from "@/components/site/SmoothScroll";
 import { ScrollProgress } from "@/components/site/ScrollProgress";
 import { Cursor } from "@/components/site/Cursor";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
+import { CookieBanner } from "@/components/site/CookieBanner";
+import { ScrollToTop } from "@/components/site/ScrollToTop";
+import { Nav } from "@/components/site/Nav";
+import { Footer } from "@/components/site/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
+    <div className="min-h-screen bg-background text-foreground antialiased">
+      <Nav />
+      <main className="grid min-h-[70vh] place-items-center px-4 py-24">
+        <div className="mx-auto max-w-xl text-center">
+          <div className="font-display text-[clamp(6rem,18vw,12rem)] leading-none">
+            4<span className="text-accent">0</span>4
+          </div>
+          <h1 className="mt-2 font-display text-3xl md:text-4xl">This page wandered off.</h1>
+          <p className="mx-auto mt-4 max-w-md text-foreground/70">
+            The page you're looking for doesn't exist or has been moved. Let's get you back to safer ground.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              to="/"
+              className="group inline-flex items-center gap-3 rounded-full bg-foreground py-3 pl-6 pr-2 text-sm font-medium text-background transition hover:bg-foreground/85"
+            >
+              Back to home
+              <span className="grid size-9 place-items-center rounded-full bg-accent text-accent-foreground transition-transform duration-300 group-hover:rotate-45">
+                <ArrowUpRight className="size-4" strokeWidth={2} />
+              </span>
+            </Link>
+            <Link to="/sitemap" className="rounded-full border border-border bg-background px-5 py-3 text-sm font-medium hover:bg-secondary">
+              View sitemap
+            </Link>
+          </div>
         </div>
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 }
@@ -67,7 +86,11 @@ function RootShell({ children }: { children: React.ReactNode }) {
         <SmoothScroll />
         <ScrollProgress />
         <Cursor />
+        <ScrollToTop />
         {children}
+        <WhatsAppButton />
+        <CookieBanner />
+        <Toaster />
         <Scripts />
       </body>
     </html>
