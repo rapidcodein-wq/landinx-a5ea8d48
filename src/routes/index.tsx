@@ -202,7 +202,7 @@ function Results() {
             <p className="text-background/70">
               At the core of everything we do lies a commitment to delivering measurable outcomes that drive your success.
             </p>
-            <a href="#contact" className="mt-6 inline-flex items-center gap-3 rounded-full bg-accent py-3 pl-6 pr-2 text-sm font-medium text-accent-foreground hover:bg-lime-deep">
+            <Link to="/contact" className="mt-6 inline-flex items-center gap-3 rounded-full bg-accent py-3 pl-6 pr-2 text-sm font-medium text-accent-foreground hover:bg-lime-deep">
               Book a 15-min call
               <span className="grid size-9 place-items-center rounded-full bg-foreground/10 text-current">↗</span>
             </a>
@@ -357,8 +357,8 @@ function Benefits() {
               Enjoy the freedom to submit unlimited requests without restrictions. Whether design tweaks or full sprints, we're here at every step.
             </p>
             <div className="mt-6 flex items-center gap-3">
-              <a href="#contact" className="rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground">Book Appointment</a>
-              <a href="#" className="text-sm text-background/70 hover:text-background">What is Landin? →</a>
+              <Link to="/contact" className="rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground">Book Appointment</a>
+              <a href="#" className="text-sm text-background/70 hover:text-background">What is Landin? →</Link>
             </div>
           </div>
         </div>
@@ -460,7 +460,7 @@ function Services() {
                   </li>
                 ))}
               </ul>
-              <a href="#contact" className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full py-3 text-sm font-medium ${s.featured ? "bg-foreground text-background" : "bg-background text-foreground"}`}>
+              <Link to="/contact" className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full py-3 text-sm font-medium ${s.featured ? "bg-foreground text-background" : "bg-background text-foreground"}`}>
                 Book an Appointment →
               </a>
             </article>
@@ -509,7 +509,7 @@ function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a href="#contact" className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-medium ${p.featured ? "bg-accent text-accent-foreground" : "bg-foreground text-background"}`}>
+              <Link to="/contact" className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-medium ${p.featured ? "bg-accent text-accent-foreground" : "bg-foreground text-background"}`}>
                 Book an Appointment →
               </a>
             </article>
