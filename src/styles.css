@@ -215,7 +215,7 @@
     will-change: transform;
   }
   .animate-marquee-slow {
-    animation: marquee 120s linear infinite;
+    animation: marquee 70s linear infinite;
     will-change: transform;
   }
   .lift {
