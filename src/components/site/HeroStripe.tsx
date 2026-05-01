@@ -15,19 +15,19 @@ function RightWaveRibbon() {
     <svg
       viewBox="0 0 1600 280"
       preserveAspectRatio="none"
-      className="absolute bottom-[-20px] right-[-200px] h-[260px] w-[1600px] max-w-none"
+      className="absolute inset-x-0 bottom-[-20px] h-[260px] w-full"
       fill="none"
     >
       <defs>
         <path
           id="heroWavePath"
-          d="M -400 200 C 0 60 420 320 900 140 C 1280 10 1500 160 1900 120"
+          d="M 0 200 C 320 60 720 320 1080 140 C 1380 20 1500 140 1600 130"
         />
       </defs>
 
       {/* Black ribbon */}
       <path
-        d="M -400 200 C 0 60 420 320 900 140 C 1280 10 1500 160 1900 120"
+        d="M 0 200 C 320 60 720 320 1080 140 C 1380 20 1500 140 1600 130"
         stroke="oklch(0.18 0.01 80)"
         strokeWidth="56"
         strokeLinecap="round"
