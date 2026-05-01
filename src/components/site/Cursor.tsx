@@ -53,8 +53,8 @@ export function Cursor() {
           animate={{
             width: variant === "link" ? 56 : 32,
             height: variant === "link" ? 56 : 32,
-          backgroundColor: "transparent",
-          borderColor: "var(--ink)",
+            backgroundColor: variant === "link" ? "var(--lime)" : "transparent",
+            borderColor: variant === "link" ? "transparent" : "var(--ink)",
           }}
           transition={{ type: "spring", stiffness: 260, damping: 24 }}
           style={{ translateX: "-50%", translateY: "-50%" }}
