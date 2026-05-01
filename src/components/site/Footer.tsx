@@ -16,9 +16,9 @@ export function Footer() {
     <footer className="border-t border-border px-4 py-14">
       <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-12">
         <div className="md:col-span-5">
-          <Link to="/" className="flex items-center gap-2" aria-label="X Studio — Home">
-            <img src={logo} alt="X Studio" className="size-10 rounded-lg" />
-            <span className="font-display text-2xl"><span className="text-accent">X</span> Studio</span>
+          <Link to="/" className="flex items-center gap-1" aria-label="X Studio — Home">
+            <img src={logo} alt="X" className="size-10 rounded-lg" />
+            <span className="font-display text-2xl">Studio</span>
           </Link>
           <p className="mt-4 max-w-sm text-sm text-foreground/65">
             A premium agency crafting unique digital presences for ambitious brands and startups.
