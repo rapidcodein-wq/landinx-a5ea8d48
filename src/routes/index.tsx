@@ -6,6 +6,7 @@ import { Nav } from "@/components/site/Nav";
 import { Marquee } from "@/components/site/Marquee";
 import { Reveal, RevealStagger, RevealItem } from "@/components/site/Reveal";
 import heroPortrait from "@/assets/hero-portrait.jpg";
+import { HeroStripe } from "@/components/site/HeroStripe";
 import abstractLime from "@/assets/abstract-lime.jpg";
 import caseBottle from "@/assets/case-bottle.jpg";
 import caseWatch from "@/assets/case-watch.jpg";
@@ -115,12 +116,8 @@ function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* decorative orb */}
-      <motion.div
-        animate={{ scale: [1, 1.08, 1], opacity: [0.85, 1, 0.85] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="pointer-events-none absolute -top-40 left-1/2 -z-10 size-[700px] -translate-x-1/2 rounded-full bg-accent/30 blur-3xl"
-      />
+      {/* Wispr-style animated gradient stripe */}
+      <HeroStripe />
     </section>
   );
 }
