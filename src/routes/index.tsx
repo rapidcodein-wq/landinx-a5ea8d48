@@ -414,9 +414,9 @@ function Portfolio() {
 }
 
 const services = [
-  { tag: "Development", title: "Full Website Sprint", price: "$2,500", time: "2–3 Week", desc: "We focus on key milestones to ship a quality site fast.", inc: ["Design + Framer Development", "Interactive Elements"] },
-  { tag: "Design", title: "Full Design Package", price: "$4,500", time: "3–4 Week", desc: "Custom logos, brand guidelines, web design and marketing.", inc: ["Files + Branding Assets", "Easy to Edit and Access"], featured: true },
-  { tag: "Development", title: "Full Stack Development", price: "$7,500", time: "4–6 Week", desc: "Scalable solutions for simple sites or complex apps.", inc: ["HTML + JS + React Code", "Database and Back-End"] },
+  { tag: "Development", title: "Full Website Sprint", price: "$240", time: "2–3 Week", desc: "We focus on key milestones to ship a quality site fast.", inc: ["Design + Framer Development", "Interactive Elements"] },
+  { tag: "Design", title: "Full Design Package", price: "$499", time: "3–4 Week", desc: "Custom logos, brand guidelines, web design and marketing.", inc: ["Files + Branding Assets", "Easy to Edit and Access"], featured: true },
+  { tag: "Development", title: "Full Stack Development", price: "$799", time: "4–6 Week", desc: "Scalable solutions for simple sites or complex apps.", inc: ["HTML + JS + React Code", "Database and Back-End"] },
 ];
 
 function Services() {
