@@ -8,6 +8,7 @@ import { Marquee } from "@/components/site/Marquee";
 import { Reveal, RevealStagger, RevealItem } from "@/components/site/Reveal";
 import { projects as allProjects } from "@/lib/projects";
 import heroPortrait from "@/assets/hero-portrait.jpg";
+import aboutPortrait from "@/assets/about-portrait.jpg";
 import { HeroStripe } from "@/components/site/HeroStripe";
 import abstractLime from "@/assets/abstract-lime.jpg";
 import caseBottle from "@/assets/case-bottle.jpg";
@@ -196,9 +197,9 @@ function About() {
                  ))}
                </div>
              </motion.div>
-            <div className="sm:col-span-2 overflow-hidden rounded-3xl border border-border">
-              <img src={heroPortrait} alt="Working portrait" loading="lazy" className="h-64 w-full object-cover" />
-            </div>
+             <div className="sm:col-span-2 overflow-hidden rounded-3xl border border-border">
+               <img src={aboutPortrait} alt="Creative director at work" loading="lazy" className="h-64 w-full object-cover" />
+             </div>
           </div>
         </div>
       </div>
