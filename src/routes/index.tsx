@@ -32,21 +32,21 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function PrimaryCTA({ children, variant = "dark" }: { children: React.ReactNode; variant?: "dark" | "lime" }) {
+function PrimaryCTA({ children, variant = "dark", to = "/contact" }: { children: React.ReactNode; variant?: "dark" | "lime"; to?: string }) {
   const styles =
     variant === "lime"
       ? "bg-accent text-accent-foreground hover:bg-lime-deep"
       : "bg-foreground text-background hover:bg-foreground/85";
   return (
-    <a
-      href="#contact"
+    <Link
+      to={to as any}
       className={`group inline-flex items-center gap-3 rounded-full py-3 pl-6 pr-2 text-sm font-medium transition-all duration-300 ${styles}`}
     >
       {children}
       <span className="grid size-9 place-items-center overflow-hidden rounded-full bg-background/15 text-current transition-transform duration-300 group-hover:rotate-45">
         <ArrowUpRight className="size-4" strokeWidth={2} />
       </span>
-    </a>
+    </Link>
   );
 }
 
