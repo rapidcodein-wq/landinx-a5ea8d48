@@ -21,13 +21,13 @@ function RightWaveRibbon() {
       <defs>
         <path
           id="heroWavePath"
-          d="M 0 200 C 320 60 720 320 1080 140 C 1380 20 1500 140 1600 130"
+          d="M 0 80 C 320 200 720 240 1080 150 C 1380 80 1500 150 1600 140"
         />
       </defs>
 
       {/* Black ribbon */}
       <path
-        d="M 0 200 C 320 60 720 320 1080 140 C 1380 20 1500 140 1600 130"
+        d="M 0 80 C 320 200 720 240 1080 150 C 1380 80 1500 150 1600 140"
         stroke="oklch(0.18 0.01 80)"
         strokeWidth="56"
         strokeLinecap="round"
