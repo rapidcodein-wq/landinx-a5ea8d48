@@ -14,8 +14,8 @@ function RightWaveRibbon() {
   return (
     <svg
       viewBox="0 0 1600 280"
-      preserveAspectRatio="none"
-      className="absolute inset-x-0 bottom-[-20px] h-[260px] w-full"
+      preserveAspectRatio="xMidYMid slice"
+      className="absolute inset-x-0 bottom-0 h-[180px] w-full sm:h-[220px] md:h-[260px]"
       fill="none"
     >
       <defs>
