@@ -19,7 +19,7 @@ export function HeroStripe() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-[420px] -translate-y-1/2 overflow-hidden"
+      className="pointer-events-none absolute inset-x-0 top-1/2 z-0 h-[480px] -translate-y-1/2 overflow-hidden"
     >
       {/* Soft top/bottom fade so the stripe blends into the page */}
       <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent_0%,black_18%,black_82%,transparent_100%)]">
