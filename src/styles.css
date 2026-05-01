@@ -214,6 +214,10 @@
     animation: marquee 40s linear infinite;
     will-change: transform;
   }
+  .animate-marquee-slow {
+    animation: marquee 120s linear infinite;
+    will-change: transform;
+  }
   .lift {
     transition:
       transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
