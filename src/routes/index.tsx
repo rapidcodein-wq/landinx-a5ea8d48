@@ -390,7 +390,7 @@ function Portfolio() {
         className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
         aria-label="Selected projects carousel"
       >
-        <div className="flex w-max gap-5 motion-safe:animate-marquee-slow group-hover:[animation-play-state:paused]">
+        <div className="flex w-max gap-5 animate-marquee-slow group-hover:[animation-play-state:paused]">
           {loop.map((p, i) => (
             <Link
               key={`${p.slug}-${i}`}
