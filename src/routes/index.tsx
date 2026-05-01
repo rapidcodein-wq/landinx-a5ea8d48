@@ -257,9 +257,10 @@ function Process() {
           </h2>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <RevealStagger className="grid gap-5 md:grid-cols-3">
           {stages.map((s) => (
-            <div key={s.n} className="rounded-3xl border border-border bg-card p-7">
+            <RevealItem key={s.n}>
+              <div className="lift h-full rounded-3xl border border-border bg-card p-7 hover:border-foreground/30">
               <div className="flex items-baseline justify-between">
                 <span className="text-xs uppercase tracking-widest text-foreground/50">Stage {s.n}</span>
                 <span className="font-display text-5xl text-foreground/15">{s.n}</span>
@@ -274,9 +275,10 @@ function Process() {
                   </li>
                 ))}
               </ul>
-            </div>
+              </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealStagger>
       </div>
     </section>
   );
