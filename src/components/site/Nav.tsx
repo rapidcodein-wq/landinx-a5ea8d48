@@ -35,7 +35,7 @@ export function Nav() {
       >
         <Link to="/" className="flex items-center gap-2 pl-3">
           <span className="grid size-7 place-items-center rounded-full bg-foreground text-background font-display text-base leading-none">L</span>
-          <span className="font-display text-xl leading-none">Landin</span>
+          <span className="font-display text-xl leading-none">Xstudio</span>
         </Link>
         <ul className="hidden items-center gap-1 md:flex">
           {links.map((l) => (

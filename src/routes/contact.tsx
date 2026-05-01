@@ -10,9 +10,9 @@ import { EMAIL, EMAIL_HREF, LOCATION, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } f
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Landin — Let's Work Together" },
+      { title: "Contact Xstudio — Let's Work Together" },
       { name: "description", content: "Reach out and we'll get back to you within 24 hours. Call, WhatsApp, or send us a message." },
-      { property: "og:title", content: "Contact Landin — Let's Work Together" },
+      { property: "og:title", content: "Contact Xstudio — Let's Work Together" },
       { property: "og:description", content: "Reach out and we'll get back to you within 24 hours." },
     ],
   }),

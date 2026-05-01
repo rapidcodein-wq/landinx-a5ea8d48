@@ -6,10 +6,10 @@ import { projects } from "@/lib/projects";
 export const Route = createFileRoute("/sitemap")({
   head: () => ({
     meta: [
-      { title: "Sitemap — Landin Studio" },
-      { name: "description", content: "Every page on the Landin website, organised in one place." },
-      { property: "og:title", content: "Sitemap — Landin Studio" },
-      { property: "og:description", content: "Every page on the Landin website, organised in one place." },
+      { title: "Sitemap — Xstudio" },
+      { name: "description", content: "Every page on the Xstudio website, organised in one place." },
+      { property: "og:title", content: "Sitemap — Xstudio" },
+      { property: "og:description", content: "Every page on the Xstudio website, organised in one place." },
     ],
   }),
   component: SitemapPage,
@@ -41,7 +41,7 @@ function SitemapPage() {
       <main className="px-4 pt-16 pb-24 md:pt-24">
         <div className="mx-auto max-w-5xl">
           <h1 className="font-display text-[clamp(2.75rem,8vw,6rem)] leading-[0.95]">Sitemap</h1>
-          <p className="mt-4 max-w-xl text-foreground/70">Every page on the Landin site.</p>
+          <p className="mt-4 max-w-xl text-foreground/70">Every page on the Xstudio site.</p>
 
           <div className="mt-12 grid gap-12 md:grid-cols-3">
             <Section title="Main Pages">
