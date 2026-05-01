@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { RevealStagger, RevealItem } from "@/components/site/Reveal";
-import { projects, type Project } from "@/lib/projects";
+import { projects, CATEGORIES, type Project } from "@/lib/projects";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/portfolio")({
   component: PortfolioPage,
 });
 
-const filters = ["All", "E-Commerce", "Agency", "SaaS", "Landing Page"] as const;
+const filters = CATEGORIES;
 type Filter = (typeof filters)[number];
 
 function PortfolioPage() {
