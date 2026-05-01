@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
-import { getProject, projects } from "@/lib/projects";
+import { getProject, projects, type Project } from "@/lib/projects";
 
 export const Route = createFileRoute("/portfolio/$slug")({
   loader: ({ params }) => {
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/portfolio/$slug")({
 });
 
 function ProjectPage() {
-  const { project } = Route.useLoaderData();
+  const { project } = Route.useLoaderData() as { project: Project };
   const others = projects.filter((p) => p.slug !== project.slug).slice(0, 3);
 
   return (
