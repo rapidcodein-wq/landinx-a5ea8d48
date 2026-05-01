@@ -1,5 +1,7 @@
-const RIGHT_TEXT =
-  "brand systems · website design · framer development · motion · identity · launches · growth strategy · creative direction · brand systems · website design · framer development · motion · identity · launches · ";
+// One witty/funny phrase. Keep it one line — we render it twice back-to-back
+// and translate by exactly its length so the loop is perfectly seamless.
+const PHRASE =
+  "we design brands · we ship websites · we make pixels behave · powered by espresso & deadlines · no lorem ipsum was harmed · please don't ask for comic sans · yes the logo can be bigger · we speak fluent figma · 100% handcrafted, 0% stock photos · ";
 
 function RightWaveRibbon() {
   return (
@@ -12,29 +14,60 @@ function RightWaveRibbon() {
       <defs>
         <path
           id="heroWavePath"
-          d="M -80 200 C 280 60 620 320 1000 140 C 1280 10 1450 160 1700 120"
+          d="M -400 200 C 0 60 420 320 900 140 C 1280 10 1500 160 1900 120"
         />
       </defs>
-      {/* The black ribbon: stroke the path heavily */}
+
+      {/* The black ribbon */}
       <path
-        d="M -80 200 C 280 60 620 320 1000 140 C 1280 10 1450 160 1700 120"
+        d="M -400 200 C 0 60 420 320 900 140 C 1280 10 1500 160 1900 120"
         stroke="oklch(0.18 0.01 80)"
         strokeWidth="56"
         strokeLinecap="round"
         fill="none"
       />
-      {/* White text running along the same centerline */}
+
+      {/* Seamless scrolling text:
+          - text A starts at 0%, text B starts at 50%
+          - both shift -50% over one cycle
+          - because both copies are identical and offset by exactly 50%,
+            as A leaves the path B has already filled the gap → infinite loop */}
       <text
         fill="var(--paper)"
-        style={{ fontFamily: "Geist, ui-sans-serif", fontSize: 20, fontWeight: 500, letterSpacing: "0.01em" }}
+        style={{
+          fontFamily: "Geist, ui-sans-serif",
+          fontSize: 20,
+          fontWeight: 500,
+          letterSpacing: "0.01em",
+        }}
       >
-        <textPath href="#heroWavePath" startOffset="-20%" dominantBaseline="middle">
-          {RIGHT_TEXT.repeat(3)}
+        <textPath href="#heroWavePath" startOffset="0%" dominantBaseline="middle">
+          {PHRASE.repeat(2)}
           <animate
             attributeName="startOffset"
-            from="-20%"
-            to="80%"
-            dur="45s"
+            from="0%"
+            to="-50%"
+            dur="40s"
+            repeatCount="indefinite"
+          />
+        </textPath>
+      </text>
+      <text
+        fill="var(--paper)"
+        style={{
+          fontFamily: "Geist, ui-sans-serif",
+          fontSize: 20,
+          fontWeight: 500,
+          letterSpacing: "0.01em",
+        }}
+      >
+        <textPath href="#heroWavePath" startOffset="50%" dominantBaseline="middle">
+          {PHRASE.repeat(2)}
+          <animate
+            attributeName="startOffset"
+            from="50%"
+            to="0%"
+            dur="40s"
             repeatCount="indefinite"
           />
         </textPath>
