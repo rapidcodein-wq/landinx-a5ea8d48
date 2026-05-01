@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { Marquee } from "@/components/site/Marquee";
+import { Reveal, RevealStagger, RevealItem } from "@/components/site/Reveal";
 import heroPortrait from "@/assets/hero-portrait.jpg";
 import abstractLime from "@/assets/abstract-lime.jpg";
 import caseBottle from "@/assets/case-bottle.jpg";
@@ -35,32 +38,50 @@ function PrimaryCTA({ children, variant = "dark" }: { children: React.ReactNode;
   return (
     <a
       href="#contact"
-      className={`group inline-flex items-center gap-3 rounded-full py-3 pl-6 pr-2 text-sm font-medium transition ${styles}`}
+      className={`group inline-flex items-center gap-3 rounded-full py-3 pl-6 pr-2 text-sm font-medium transition-all duration-300 ${styles}`}
     >
       {children}
-      <span className="grid size-9 place-items-center rounded-full bg-background/15 text-current transition group-hover:rotate-45">↗</span>
+      <span className="grid size-9 place-items-center overflow-hidden rounded-full bg-background/15 text-current transition-transform duration-300 group-hover:rotate-45">
+        <ArrowUpRight className="size-4" strokeWidth={2} />
+      </span>
     </a>
   );
 }
 
 function Hero() {
+  const ref = useRef<HTMLElement | null>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const portraitScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+  const portraitY = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.4]);
   return (
-    <section className="relative overflow-hidden px-4 pt-10 pb-24">
-      <div className="mx-auto max-w-7xl">
-        <div className="mb-8 flex items-center justify-center">
+    <section ref={ref} className="relative overflow-hidden px-4 pt-10 pb-24">
+      <motion.div style={{ opacity: heroOpacity }} className="mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-8 flex items-center justify-center"
+        >
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 text-xs">
             <span className="rounded-full bg-foreground px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-background">New</span>
             <span className="text-foreground/70">No. 1 Studio of 2025</span>
           </span>
-        </div>
+        </motion.div>
 
-        <h1 className="font-display text-center text-[clamp(3rem,9vw,8.5rem)] leading-[0.95]">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          className="font-display text-center text-[clamp(3rem,9vw,8.5rem)] leading-[0.95]"
+        >
           Premium Agency
           <br />
           for{" "}
           <span className="relative inline-block align-middle">
             <span className="relative z-10 inline-flex translate-y-1 items-center overflow-hidden rounded-full border border-border bg-background px-4">
-              <img
+              <motion.img
+                style={{ scale: portraitScale, y: portraitY }}
                 src={heroPortrait}
                 alt=""
                 width={120}
@@ -70,22 +91,36 @@ function Hero() {
             </span>
           </span>{" "}
           <em className="not-italic text-foreground/90">Creatives.</em>
-        </h1>
+        </motion.h1>
 
-        <p className="mx-auto mt-8 max-w-xl text-center text-base text-foreground/70 md:text-lg">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
+          className="mx-auto mt-8 max-w-xl text-center text-base text-foreground/70 md:text-lg"
+        >
           We specialize in crafting unique digital presence that helps businesses grow and stand out in their industries.
-        </p>
+        </motion.p>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
+          className="mt-10 flex flex-wrap items-center justify-center gap-3"
+        >
           <PrimaryCTA>Connect With Us</PrimaryCTA>
           <a href="#about" className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-5 py-3 text-sm font-medium hover:bg-secondary">
             What is Landin?
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* decorative orb */}
-      <div className="pointer-events-none absolute -top-40 left-1/2 -z-10 size-[700px] -translate-x-1/2 rounded-full bg-accent/30 blur-3xl" />
+      <motion.div
+        animate={{ scale: [1, 1.08, 1], opacity: [0.85, 1, 0.85] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute -top-40 left-1/2 -z-10 size-[700px] -translate-x-1/2 rounded-full bg-accent/30 blur-3xl"
+      />
     </section>
   );
 }
