@@ -1,8 +1,3 @@
-import { motion } from "framer-motion";
-
-const LEFT_TEXT =
-  "branding · strategy · moodboards · type explorations · art direction · motion · identity systems · web design · framer development · launch · growth · ";
-
 const RIGHT_TEXT =
   "brand systems · website design · framer development · motion · identity · launches · growth strategy · creative direction · brand systems · website design · framer development · motion · identity · launches · ";
 
