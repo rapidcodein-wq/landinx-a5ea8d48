@@ -54,9 +54,9 @@ function RightWaveRibbon() {
         />
       </defs>
       {/* The black ribbon: stroke the path heavily */}
-      <use
-        href="#heroWavePath"
-        stroke="var(--ink)"
+      <path
+        d="M -80 200 C 280 60 620 320 1000 140 C 1280 10 1450 160 1700 120"
+        stroke="oklch(0.18 0.01 80)"
         strokeWidth="56"
         strokeLinecap="round"
         fill="none"
@@ -111,7 +111,7 @@ function AudioPill() {
 
 export function HeroStripe() {
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
       <LeftLoopRibbon />
       <RightWaveRibbon />
       <AudioPill />
