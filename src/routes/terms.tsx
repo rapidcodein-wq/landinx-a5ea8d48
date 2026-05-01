@@ -23,7 +23,7 @@ function TermsPage() {
           <h1 className="font-display text-5xl md:text-6xl">Terms & Conditions</h1>
           <p className="mt-4 text-sm text-foreground/55">Last updated: May 2026</p>
 
-          <div className="prose-landin mt-10 space-y-8 text-foreground/80">
+          <div className="prose-xstudio mt-10 space-y-8 text-foreground/80">
             <section>
               <h2 className="font-display text-2xl text-foreground">1. Agreement</h2>
               <p className="mt-3">By engaging Xstudio (&quot;we&quot;, &quot;us&quot;) for services, you agree to these terms. If you don't agree, please don't use our services.</p>
