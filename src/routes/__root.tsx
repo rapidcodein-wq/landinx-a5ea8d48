@@ -36,10 +36,14 @@ export const Route = createRootRoute({
       { name: "description", content: "Landin is a premium creative agency crafting unique digital presences that help ambitious brands grow and stand out." },
       { name: "author", content: "Landin Studio" },
       { property: "og:title", content: "Landin — Premium Agency for Creatives" },
-      { property: "og:description", content: "We craft unique digital presences that help ambitious brands grow and stand out." },
+      { property: "og:description", content: "Landin is a premium creative agency crafting unique digital presences that help ambitious brands grow and stand out." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Landin — Premium Agency for Creatives" },
+      { name: "twitter:description", content: "Landin is a premium creative agency crafting unique digital presences that help ambitious brands grow and stand out." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7958ceb4-e7ba-4033-9c71-3922deeff091/id-preview-8948204d--a661c7a6-5edd-4389-8e9c-340bb8481e3d.lovable.app-1777618474855.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7958ceb4-e7ba-4033-9c71-3922deeff091/id-preview-8948204d--a661c7a6-5edd-4389-8e9c-340bb8481e3d.lovable.app-1777618474855.png" },
     ],
     links: [
       {
