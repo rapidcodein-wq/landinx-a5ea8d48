@@ -374,6 +374,8 @@ const projects = [
 ];
 
 function Portfolio() {
+  // Duplicate the list so the marquee can loop seamlessly.
+  const loop = [...projects, ...projects, ...projects, ...projects];
   return (
     <section className="px-4 py-24">
       <div className="mx-auto max-w-7xl">
@@ -387,13 +389,28 @@ function Portfolio() {
           </div>
           <Link to="/portfolio" className="text-sm font-medium underline underline-offset-4">View Portfolio →</Link>
         </div>
+      </div>
 
-        <RevealStagger className="grid gap-5 md:grid-cols-3">
-          {projects.map((p) => (
-            <RevealItem key={p.name}>
-              <Link to="/portfolio/$slug" params={{ slug: p.slug }} className="group block">
+      <div
+        className="group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
+        aria-label="Selected projects carousel"
+      >
+        <div className="flex w-max gap-5 motion-safe:animate-marquee group-hover:[animation-play-state:paused]">
+          {loop.map((p, i) => (
+            <Link
+              key={`${p.slug}-${i}`}
+              to="/portfolio/$slug"
+              params={{ slug: p.slug }}
+              className="group/card block w-[78vw] max-w-[360px] shrink-0 sm:w-[44vw] md:w-[34vw] lg:w-[26vw]"
+              aria-label={`${p.name} — ${p.type}, ${p.year}`}
+            >
               <div className="overflow-hidden rounded-3xl bg-secondary">
-                <img src={p.img} alt={p.name} loading="lazy" className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-[1.06]" />
+                <img
+                  src={p.img}
+                  alt={p.name}
+                  loading="lazy"
+                  className="aspect-[4/5] w-full object-cover transition duration-700 group-hover/card:scale-[1.06]"
+                />
               </div>
               <div className="mt-4 flex items-center justify-between">
                 <h3 className="font-display text-2xl">{p.name}</h3>
@@ -402,10 +419,9 @@ function Portfolio() {
                   <span className="rounded-full border border-border px-2.5 py-1">{p.type}</span>
                 </div>
               </div>
-              </Link>
-            </RevealItem>
+            </Link>
           ))}
-        </RevealStagger>
+        </div>
       </div>
     </section>
   );
