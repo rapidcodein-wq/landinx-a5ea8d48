@@ -50,7 +50,7 @@ function RightWaveRibbon() {
             attributeName="startOffset"
             from="0%"
             to={`-${SHIFT_PCT}%`}
-            dur="18s"
+            dur="10s"
             repeatCount="indefinite"
           />
         </textPath>
