@@ -6,6 +6,7 @@ import { Nav } from "@/components/site/Nav";
 import { Marquee } from "@/components/site/Marquee";
 import { Reveal, RevealStagger, RevealItem } from "@/components/site/Reveal";
 import heroPortrait from "@/assets/hero-portrait.jpg";
+import { HeroStripe } from "@/components/site/HeroStripe";
 import abstractLime from "@/assets/abstract-lime.jpg";
 import caseBottle from "@/assets/case-bottle.jpg";
 import caseWatch from "@/assets/case-watch.jpg";
