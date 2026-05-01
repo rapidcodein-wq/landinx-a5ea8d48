@@ -6,10 +6,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — Xstudio" },
-      { name: "description", content: "Answers about pricing, process, timelines, revisions, technologies and support at Xstudio." },
-      { property: "og:title", content: "FAQ — Xstudio" },
-      { property: "og:description", content: "Answers about pricing, process, timelines and support at Xstudio." },
+      { title: "FAQ — X Studio" },
+      { name: "description", content: "Answers about pricing, process, timelines, revisions, technologies and support at X Studio." },
+      { property: "og:title", content: "FAQ — X Studio" },
+      { property: "og:description", content: "Answers about pricing, process, timelines and support at X Studio." },
     ],
   }),
   component: FaqPage,

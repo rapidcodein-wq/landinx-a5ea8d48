@@ -6,10 +6,10 @@ import { EMAIL } from "@/lib/contact";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — Xstudio" },
-      { name: "description", content: "How Xstudio collects, uses and protects your personal information." },
-      { property: "og:title", content: "Privacy Policy — Xstudio" },
-      { property: "og:description", content: "How Xstudio handles your personal information." },
+      { title: "Privacy Policy — X Studio" },
+      { name: "description", content: "How X Studio collects, uses and protects your personal information." },
+      { property: "og:title", content: "Privacy Policy — X Studio" },
+      { property: "og:description", content: "How X Studio handles your personal information." },
     ],
   }),
   component: PrivacyPage,

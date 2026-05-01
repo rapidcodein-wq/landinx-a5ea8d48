@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import logo from "@/assets/xstudio-logo.png";
 
 type NavLinkItem = { label: string; to: string };
 
@@ -33,9 +34,9 @@ export function Nav() {
             : "max-w-7xl border-border/60 py-2.5"
         }`}
       >
-        <Link to="/" className="flex items-center gap-2 pl-3">
-          <span className="grid size-7 place-items-center rounded-full bg-foreground text-background font-display text-base leading-none">L</span>
-          <span className="font-display text-xl leading-none"><span className="text-accent">X</span>studio</span>
+        <Link to="/" className="flex items-center gap-2 pl-2" aria-label="X Studio — Home">
+          <img src={logo} alt="X Studio" className="size-9 rounded-lg" />
+          <span className="font-display text-xl leading-none"><span className="text-accent">X</span> Studio</span>
         </Link>
         <ul className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
