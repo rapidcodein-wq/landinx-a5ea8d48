@@ -56,8 +56,8 @@ function Hero() {
   const portraitY = useTransform(scrollYProgress, [0, 1], [0, -40]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.4]);
   return (
-    <section ref={ref} className="relative overflow-hidden px-4 pt-10 pb-24">
-      <motion.div style={{ opacity: heroOpacity }} className="mx-auto max-w-7xl">
+    <section ref={ref} className="relative overflow-hidden px-4 pt-10 pb-32">
+      <motion.div style={{ opacity: heroOpacity }} className="relative z-10 mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
