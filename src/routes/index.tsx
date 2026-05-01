@@ -205,7 +205,7 @@ function Results() {
             <Link to="/contact" className="mt-6 inline-flex items-center gap-3 rounded-full bg-accent py-3 pl-6 pr-2 text-sm font-medium text-accent-foreground hover:bg-lime-deep">
               Book a 15-min call
               <span className="grid size-9 place-items-center rounded-full bg-foreground/10 text-current">↗</span>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -357,8 +357,8 @@ function Benefits() {
               Enjoy the freedom to submit unlimited requests without restrictions. Whether design tweaks or full sprints, we're here at every step.
             </p>
             <div className="mt-6 flex items-center gap-3">
-              <Link to="/contact" className="rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground">Book Appointment</a>
-              <a href="#" className="text-sm text-background/70 hover:text-background">What is Landin? →</Link>
+              <Link to="/contact" className="rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground">Book Appointment</Link>
+              <Link to="/about" className="text-sm text-background/70 hover:text-background">What is Landin? →</Link>
             </div>
           </div>
         </div>
@@ -368,9 +368,9 @@ function Benefits() {
 }
 
 const projects = [
-  { name: "Way Fields", year: 2024, type: "E-Commerce", img: caseWatch },
-  { name: "Raven Studio", year: 2025, type: "Business", img: caseBlackBottle },
-  { name: "White Stag", year: 2024, type: "SaaS", img: caseBottle },
+  { name: "Way Fields", slug: "way-fields", year: 2024, type: "E-Commerce", img: caseWatch },
+  { name: "Raven Studio", slug: "raven-studio", year: 2025, type: "Business", img: caseBlackBottle },
+  { name: "White Stag", slug: "white-stag", year: 2024, type: "SaaS", img: caseBottle },
 ];
 
 function Portfolio() {
@@ -385,13 +385,13 @@ function Portfolio() {
               <em className="text-foreground/60">That Propel Your Brand.</em>
             </h2>
           </div>
-          <a href="#" className="text-sm font-medium underline underline-offset-4">View Portfolio →</a>
+          <Link to="/portfolio" className="text-sm font-medium underline underline-offset-4">View Portfolio →</Link>
         </div>
 
         <RevealStagger className="grid gap-5 md:grid-cols-3">
           {projects.map((p) => (
             <RevealItem key={p.name}>
-              <a href="#" className="group block">
+              <Link to="/portfolio/$slug" params={{ slug: p.slug }} className="group block">
               <div className="overflow-hidden rounded-3xl bg-secondary">
                 <img src={p.img} alt={p.name} loading="lazy" className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-[1.06]" />
               </div>
@@ -402,7 +402,7 @@ function Portfolio() {
                   <span className="rounded-full border border-border px-2.5 py-1">{p.type}</span>
                 </div>
               </div>
-              </a>
+              </Link>
             </RevealItem>
           ))}
         </RevealStagger>
@@ -462,7 +462,7 @@ function Services() {
               </ul>
               <Link to="/contact" className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full py-3 text-sm font-medium ${s.featured ? "bg-foreground text-background" : "bg-background text-foreground"}`}>
                 Book an Appointment →
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -511,7 +511,7 @@ function Pricing() {
               </ul>
               <Link to="/contact" className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full py-3.5 text-sm font-medium ${p.featured ? "bg-accent text-accent-foreground" : "bg-foreground text-background"}`}>
                 Book an Appointment →
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -622,10 +622,10 @@ function CTA() {
           Ready to take the next step? Join us now and start transforming your vision into reality with expert support.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
-          <a href="#" className="group inline-flex items-center gap-3 rounded-full bg-accent py-3 pl-6 pr-2 text-sm font-medium text-accent-foreground hover:bg-lime-deep">
+          <Link to="/contact" className="group inline-flex items-center gap-3 rounded-full bg-accent py-3 pl-6 pr-2 text-sm font-medium text-accent-foreground hover:bg-lime-deep">
             Book an Appointment
             <span className="grid size-9 place-items-center rounded-full bg-foreground/10 transition group-hover:rotate-45">↗</span>
-          </a>
+          </Link>
           <span className="text-sm text-background/60">Made remotely with 💚 — Westhill Studio</span>
         </div>
 
