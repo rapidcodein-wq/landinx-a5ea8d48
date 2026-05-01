@@ -8,10 +8,10 @@ import { projects, type Project } from "@/lib/projects";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Xstudio" },
-      { name: "description", content: "Selected projects from Xstudio: brand systems, e-commerce, SaaS and high-converting landing pages." },
-      { property: "og:title", content: "Portfolio — Xstudio" },
-      { property: "og:description", content: "Selected projects from Xstudio." },
+      { title: "Portfolio — X Studio" },
+      { name: "description", content: "Selected projects from X Studio: brand systems, e-commerce, SaaS and high-converting landing pages." },
+      { property: "og:title", content: "Portfolio — X Studio" },
+      { property: "og:description", content: "Selected projects from X Studio." },
     ],
   }),
   component: PortfolioPage,

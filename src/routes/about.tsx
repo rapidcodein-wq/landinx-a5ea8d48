@@ -12,10 +12,10 @@ import heroPortrait from "@/assets/hero-portrait.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Xstudio — Premium Creative Agency" },
-      { name: "description", content: "Xstudio is a remote creative studio in Ahmedabad shipping brand systems, websites and motion for ambitious teams." },
-      { property: "og:title", content: "About Xstudio — Premium Creative Agency" },
-      { property: "og:description", content: "Meet the team behind Xstudio and the work we do for ambitious brands." },
+      { title: "About X Studio — Premium Creative Agency" },
+      { name: "description", content: "X Studio is a remote creative studio in Ahmedabad shipping brand systems, websites and motion for ambitious teams." },
+      { property: "og:title", content: "About X Studio — Premium Creative Agency" },
+      { property: "og:description", content: "Meet the team behind X Studio and the work we do for ambitious brands." },
     ],
   }),
   component: AboutPage,
@@ -42,10 +42,10 @@ function AboutPage() {
         <section className="px-4 pt-16 pb-20 md:pt-24">
           <div className="mx-auto max-w-5xl text-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-foreground/70">
-              <span className="size-1.5 rounded-full bg-accent" /> About Xstudio
+              <span className="size-1.5 rounded-full bg-accent" /> About X Studio
             </span>
             <h1 className="mt-6 font-display text-[clamp(2.75rem,8vw,7rem)] leading-[0.95]">
-              We Are Xstudio · <em className="text-foreground/60">A Premium Creative Agency</em>
+              We Are X Studio · <em className="text-foreground/60">A Premium Creative Agency</em>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-foreground/70 md:text-lg">
               A small, senior team building brands, websites and digital products that actually move the needle for ambitious founders.
@@ -58,14 +58,14 @@ function AboutPage() {
             <Reveal>
               <h2 className="font-display text-4xl leading-tight md:text-5xl">Our story</h2>
               <p className="mt-6 text-foreground/75">
-                Xstudio started as a two-person experiment in 2020 — a designer and an engineer who were tired of bloated agency processes. Five years later, we still operate the same way: small team, senior people, no junior handoffs, and a clear bias for shipping.
+                X Studio started as a two-person experiment in 2020 — a designer and an engineer who were tired of bloated agency processes. Five years later, we still operate the same way: small team, senior people, no junior handoffs, and a clear bias for shipping.
               </p>
               <p className="mt-4 text-foreground/75">
                 We work with founders, marketing leads and product teams who care about craft. From brand systems to launch sites to internal tools, every project is led by the same people who quoted it.
               </p>
             </Reveal>
             <div className="overflow-hidden rounded-3xl">
-              <img src={heroPortrait} alt="Xstudio team at work" className="h-full w-full object-cover" />
+              <img src={heroPortrait} alt="X Studio team at work" className="h-full w-full object-cover" />
             </div>
           </div>
         </section>

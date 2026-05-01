@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { EMAIL, EMAIL_HREF, LOCATION, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/contact";
+import logo from "@/assets/xstudio-logo.png";
 
 const pages: { label: string; to: string }[] = [
   { label: "Home", to: "/" },
@@ -15,9 +16,9 @@ export function Footer() {
     <footer className="border-t border-border px-4 py-14">
       <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-12">
         <div className="md:col-span-5">
-          <Link to="/" className="flex items-center gap-2">
-            <span className="grid size-8 place-items-center rounded-full bg-foreground text-background font-display text-base">L</span>
-            <span className="font-display text-2xl">Xstudio</span>
+          <Link to="/" className="flex items-center gap-2" aria-label="X Studio — Home">
+            <img src={logo} alt="X Studio" className="size-10 rounded-lg" />
+            <span className="font-display text-2xl"><span className="text-accent">X</span> Studio</span>
           </Link>
           <p className="mt-4 max-w-sm text-sm text-foreground/65">
             A premium agency crafting unique digital presences for ambitious brands and startups.
@@ -75,7 +76,7 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-12 flex max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-border pt-6 text-xs text-foreground/55">
-        <div>© {new Date().getFullYear()} Xstudio</div>
+        <div>© {new Date().getFullYear()} X Studio</div>
         <div className="flex flex-wrap gap-5">
           <Link to="/terms" className="hover:underline">Terms & Conditions</Link>
           <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
