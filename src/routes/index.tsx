@@ -152,22 +152,50 @@ function About() {
 
         <div className="lg:col-span-7">
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-3xl border border-border bg-card p-6">
-              <div className="text-xs uppercase tracking-widest text-foreground/50">Revenue</div>
-              <div className="mt-2 font-display text-4xl">$0 → $500K</div>
-              <p className="mt-2 text-sm text-foreground/60">In just six months across our partner roster.</p>
-              <div className="mt-6 h-24 rounded-2xl bg-gradient-to-br from-accent/40 to-accent/0" />
-            </div>
-            <div className="rounded-3xl border border-border bg-foreground p-6 text-background">
-              <div className="text-xs uppercase tracking-widest text-background/60">New Customers</div>
-              <div className="mt-2 font-display text-4xl">+47% Growth</div>
-              <p className="mt-2 text-sm text-background/70">Compounding monthly across funnels.</p>
-              <div className="mt-6 grid grid-cols-7 items-end gap-1.5 h-24">
-                {[30, 45, 38, 60, 52, 78, 95].map((h, i) => (
-                  <div key={i} className="rounded-sm bg-accent" style={{ height: `${h}%` }} />
-                ))}
-              </div>
-            </div>
+             <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true, amount: 0.5 }}
+               transition={{ duration: 0.5, ease: "easeOut" }}
+               className="rounded-3xl border border-border bg-card p-6"
+             >
+               <div className="text-xs uppercase tracking-widest text-foreground/50">Revenue</div>
+               <div className="mt-2 font-display text-4xl">$0 → $500K</div>
+               <p className="mt-2 text-sm text-foreground/60">In just six months across our partner roster.</p>
+               <div className="mt-6 h-24 overflow-hidden rounded-2xl bg-secondary">
+                 <motion.div
+                   className="h-full rounded-2xl bg-gradient-to-r from-accent to-accent/30"
+                   initial={{ width: 0 }}
+                   whileInView={{ width: "100%" }}
+                   viewport={{ once: true, amount: 0.5 }}
+                   transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+                 />
+               </div>
+             </motion.div>
+             <motion.div
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               viewport={{ once: true, amount: 0.5 }}
+               transition={{ duration: 0.5, ease: "easeOut" }}
+               className="rounded-3xl border border-border bg-foreground p-6 text-background"
+             >
+               <div className="text-xs uppercase tracking-widest text-background/60">New Customers</div>
+               <div className="mt-2 font-display text-4xl">+47% Growth</div>
+               <p className="mt-2 text-sm text-background/70">Compounding monthly across funnels.</p>
+               <div className="mt-6 grid grid-cols-7 items-end gap-1.5 h-24">
+                 {[30, 45, 38, 60, 52, 78, 95].map((h, i) => (
+                   <motion.div
+                     key={i}
+                     className="rounded-sm bg-accent origin-bottom"
+                     style={{ height: `${h}%` }}
+                     initial={{ scaleY: 0, opacity: 0 }}
+                     whileInView={{ scaleY: 1, opacity: 1 }}
+                     viewport={{ once: true, amount: 0.5 }}
+                     transition={{ duration: 0.55, delay: 0.15 + i * 0.09, ease: [0.22, 1, 0.36, 1] }}
+                   />
+                 ))}
+               </div>
+             </motion.div>
             <div className="sm:col-span-2 overflow-hidden rounded-3xl border border-border">
               <img src={heroPortrait} alt="Working portrait" loading="lazy" className="h-64 w-full object-cover" />
             </div>
