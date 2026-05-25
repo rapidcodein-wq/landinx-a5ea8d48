@@ -1,4 +1,4 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts, useRouter } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 
 import appCss from "../styles.css?url";
@@ -46,6 +46,44 @@ function NotFoundComponent() {
   );
 }
 
+function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+  console.error(error);
+  const router = useRouter();
+
+  return (
+    <div className="min-h-screen bg-background text-foreground antialiased">
+      <Nav />
+      <main className="grid min-h-[70vh] place-items-center px-4 py-24">
+        <div className="mx-auto max-w-xl text-center">
+          <div className="mx-auto mb-6 grid size-16 place-items-center rounded-full bg-accent font-display text-3xl text-accent-foreground">
+            X
+          </div>
+          <h1 className="font-display text-4xl leading-[0.95] md:text-6xl">Something didn't load.</h1>
+          <p className="mx-auto mt-4 max-w-md text-foreground/70">
+            The site hit a temporary issue. Refresh the page or head back home.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <button
+              type="button"
+              onClick={() => {
+                router.invalidate();
+                reset();
+              }}
+              className="rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background hover:bg-foreground/85"
+            >
+              Try again
+            </button>
+            <Link to="/" className="rounded-full border border-border bg-background px-5 py-3 text-sm font-medium hover:bg-secondary">
+              Go home
+            </Link>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -75,6 +113,7 @@ export const Route = createRootRoute({
   }),
   shellComponent: RootShell,
   component: RootComponent,
+  errorComponent: ErrorComponent,
   notFoundComponent: NotFoundComponent,
 });
 
